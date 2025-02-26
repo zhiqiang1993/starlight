@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery - Akamai CDN Test Site</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Akamai CDN Test Website</h1>
+            <p class="subtitle">A demonstration site for CDN configuration and testing</p>
+        </header>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="images.html" class="active">Image Gallery</a></li>
+                <li><a href="about.html">About CDNs</a></li>
+            </ul>
+        </nav>
+        
+        <main>
+            <section>
+                <h2>Image Gallery</h2>
+                <p>This gallery contains various images to test CDN image caching and optimization features. The loading time for each image is calculated and displayed below it. Compare load times when accessed via CDN vs direct origin.</p>
+                
+                <div class="gallery">
+                    <!-- Use placeholder images for testing -->
+                    <div class="gallery-item">
+                        <img src="https://via.placeholder.com/800x500?text=Image+1" alt="Test Image 1">
+                        <div class="caption">High Resolution Image (800x500)</div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <img src="https://via.placeholder.com/400x300?text=Image+2" alt="Test Image 2">
+                        <div class="caption">Medium Resolution Image (400x300)</div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <img src="https://via.placeholder.com/200x200?text=Image+3" alt="Test Image 3">
+                        <div class="caption">Small Resolution Image (200x200)</div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <img src="https://via.placeholder.com/600x400?text=Image+4" alt="Test Image 4">
+                        <div class="caption">Image with Text (600x400)</div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <img src="https://via.placeholder.com/900x500?text=Image+5" alt="Test Image 5">
+                        <div class="caption">Large Image (900x500)</div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <img src="https://via.placeholder.com/250x250?text=Image+6" alt="Test Image 6">
+                        <div class="caption">Square Image (250x250)</div>
+                    </div>
+                </div>
+            </section>
+            
+            <section>
+                <h2>CDN Image Optimization Benefits</h2>
+                <p>Akamai CDN provides several image optimization benefits:</p>
+                <ul>
+                    <li><strong>Automatic format conversion</strong> - Converting images to optimal formats like WebP for supported browsers</li>
+                    <li><strong>Image compression</strong> - Reducing file size while maintaining visual quality</li>
+                    <li><strong>Device-specific resizing</strong> - Serving appropriately sized images based on the viewing device</li>
+                    <li><strong>Progressive loading</strong> - Enabling images to load gradually, improving perceived performance</li>
+                </ul>
+                <p>These optimizations can dramatically reduce page load times and bandwidth usage.</p>
+            </section>
+        </main>
+        
+        <footer>
+            <p>This is a test website for CDN configuration learning purposes only</p>
+            <p>Current server time: <span id="server-time"></span></p>
+            <p>CDN status: <span id="cdn-status">Checking...</span></p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

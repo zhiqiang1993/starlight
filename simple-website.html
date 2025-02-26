@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akamai CDN Test Site</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Akamai CDN Test Website</h1>
+            <p class="subtitle">A demonstration site for CDN configuration and testing</p>
+        </header>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="images.html">Image Gallery</a></li>
+                <li><a href="about.html">About CDNs</a></li>
+            </ul>
+        </nav>
+        
+        <main>
+            <section class="intro">
+                <h2>Welcome to the CDN Test Environment</h2>
+                <p>This simple website has been created to demonstrate how Akamai CDN works and how it can improve website performance and security.</p>
+                <p>Use this site to test:</p>
+                <ul>
+                    <li>Content caching behavior</li>
+                    <li>Asset delivery optimization</li>
+                    <li>CDN purging operations</li>
+                    <li>Origin connectivity</li>
+                    <li>Security configurations</li>
+                </ul>
+            </section>
+            
+            <section class="cdn-info">
+                <h2>How a CDN Works</h2>
+                <p>A Content Delivery Network consists of distributed servers that deliver web content to users based on their geographic location. When properly configured, a CDN:</p>
+                <ul>
+                    <li>Reduces page load times by serving content from nearby edge servers</li>
+                    <li>Decreases bandwidth costs by caching and optimizing content</li>
+                    <li>Increases content availability during traffic spikes</li>
+                    <li>Provides additional security against DDoS attacks</li>
+                </ul>
+                <p>This test site will help demonstrate these concepts in a practical way.</p>
+            </section>
+            
+            <section class="test-instructions">
+                <h2>Testing CDN Performance</h2>
+                <p>Try accessing this site through different means:</p>
+                <ol>
+                    <li>Directly through the origin server</li>
+                    <li>Through the Akamai CDN</li>
+                </ol>
+                <p>Compare load times and network requests to see the CDN in action.</p>
+                <p>Check the browser's Network tab to observe different response headers when content is served from the CDN versus directly from origin.</p>
+            </section>
+        </main>
+        
+        <footer>
+            <p>This is a test website for CDN configuration learning purposes only</p>
+            <p>Current server time: <span id="server-time"></span></p>
+            <p>CDN status: <span id="cdn-status">Checking...</span></p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

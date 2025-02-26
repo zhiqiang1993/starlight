@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About CDNs - Akamai CDN Test Site</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Akamai CDN Test Website</h1>
+            <p class="subtitle">A demonstration site for CDN configuration and testing</p>
+        </header>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="images.html">Image Gallery</a></li>
+                <li><a href="about.html" class="active">About CDNs</a></li>
+            </ul>
+        </nav>
+        
+        <main>
+            <section>
+                <h2>What is a Content Delivery Network (CDN)?</h2>
+                <p>A Content Delivery Network (CDN) is a globally distributed network of servers that work together to provide fast delivery of Internet content including web pages, images, videos, and other assets.</p>
+                <p>By caching content at strategically placed physical nodes across the globe, a CDN allows for the quick transfer of assets needed for loading Internet content.</p>
+            </section>
+            
+            <section>
+                <h2>How Akamai CDN Works</h2>
+                <div class="cdn-diagram">
+                    <!-- This would ideally be a custom diagram, but using text representation for simplicity -->
+                    <pre style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; overflow: auto; text-align: left;">
+  User Request                    Akamai Edge Server                Origin Server
+      │                                  │                              │
+      │   1. Request Content             │                              │
+      ├─────────────────────────────────►│                              │
+      │                                  │                              │
+      │                            ┌─────┴─────┐                        │
+      │                            │ Content   │                        │
+      │                            │ in Cache? │                        │
+      │                            └─────┬─────┘                        │
+      │                                  │                              │
+      │                           No     │                              │
+      │                                  │     2. Request Content       │
+      │                                  ├─────────────────────────────►│
+      │                                  │                              │
+      │                                  │     3. Deliver Content       │
+      │                                  │◄─────────────────────────────┤
+      │                                  │                              │
+      │                            ┌─────┴─────┐                        │
+      │                            │  Cache    │                        │
+      │                            │  Content  │                        │
+      │                            └─────┬─────┘                        │
+      │                                  │                              │
+      │   4. Deliver Content             │                              │
+      │◄─────────────────────────────────┤                              │
+      │                                  │                              │
+    </pre>
+                </div>
+                <ol>
+                    <li><strong>User requests content</strong> - When a user requests a web page or asset, the request is routed to the nearest Akamai edge server instead of directly to the origin server.</li>
+                    <li><strong>Edge server check</strong> - The edge server checks if it has a cached copy of the requested content that is still valid according to its TTL (Time To Live).</li>
+                    <li><strong>Cache hit</strong> - If the content is in cache and valid (a "cache hit"), the edge server delivers it directly to the user without contacting the origin server.</li>
+                    <li><strong>Cache miss</strong> - If the content is not in cache or has expired (a "cache miss"), the edge server requests it from the origin server, caches a copy, and then delivers it to the user.</li>
+                </ol>
+            </section>
+            
+            <section>
+                <h2>Key Akamai CDN Features</h2>
+                <div class="features-list">
+                    <div class="feature-card">
+                        <h3>Content Caching</h3>
+                        <p>Stores copies of content at edge servers to reduce load on origin servers and decrease content delivery time.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3>Dynamic Content Acceleration</h3>
+                        <p>Optimizes the delivery of dynamic, non-cacheable content through route optimization and connection optimization.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3>Image & Video Optimization</h3>
+                        <p>Automatically optimizes images and video for different devices and connection speeds.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3>Web Application Firewall</h3>
+                        <p>Protects websites from common web exploits that could affect availability, compromise security, or consume excessive resources.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3>DDoS Protection</h3>
+                        <p>Provides defense against Distributed Denial of Service attacks by absorbing and filtering malicious traffic.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3>Bot Management</h3>
+                        <p>Identifies and manages automated bot traffic to protect against scraping, credential stuffing, and other automated attacks.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section>
+                <h2>Akamai CDN Configuration Basics</h2>
+                <p>Configuring an Akamai CDN involves several key components:</p>
+                <ul>
+                    <li><strong>Property Configuration</strong> - Defines how content should be handled, cached, and delivered.</li>
+                    <li><strong>Cache TTL Settings</strong> - Determines how long content remains valid in the cache.</li>
+                    <li><strong>Origin Settings</strong> - Specifies the origin server(s) from which the CDN retrieves content.</li>
+                    <li><strong>Security Settings</strong> - Configures WAF rules, rate limiting, and other security features.</li>
+                    <li><strong>Content Purging</strong> - Mechanisms to remove content from the cache when needed.</li>
+                </ul>
+                <p>This test website can be used to experiment with these settings and observe their effects on content delivery.</p>
+            </section>
+        </main>
+        
+        <footer>
+            <p>This is a test website for CDN configuration learning purposes only</p>
+            <p>Current server time: <span id="server-time"></span></p>
+            <p>CDN status: <span id="cdn-status">Checking...</span></p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
